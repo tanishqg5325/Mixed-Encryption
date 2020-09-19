@@ -8,11 +8,11 @@
 
 using std::string;
 
-class public_key {
+class PublicKey {
     mpz_class n, e;
 public:
-    public_key() {}
-    public_key(mpz_class, mpz_class);
+    PublicKey() {}
+    PublicKey(mpz_class, mpz_class);
     mpz_class get_n() const;
     mpz_class get_e() const;
     string encrypt(string, int) const;

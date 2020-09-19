@@ -3,13 +3,13 @@
 #include "public_key.h"
 #include "helper.h"
 
-public_key::public_key(mpz_class n, mpz_class e) : n(n), e(e) {}
+PublicKey::PublicKey(mpz_class n, mpz_class e) : n(n), e(e) {}
 
-mpz_class public_key::get_n() const {return n;}
+mpz_class PublicKey::get_n() const {return n;}
 
-mpz_class public_key::get_e() const {return e;}
+mpz_class PublicKey::get_e() const {return e;}
 
-string public_key::encrypt(string plain_text, int a) const {
+string PublicKey::encrypt(string plain_text, int a) const {
     int block_size = get_block_size(n);
     if(a == 1) plain_text = pre_process(plain_text, block_size+a);
     string cipher_text = "";
@@ -30,7 +30,7 @@ string public_key::encrypt(string plain_text, int a) const {
     return cipher_text;
 }
 
-mpz_class public_key::encrypt(mpz_class m) const {
+mpz_class PublicKey::encrypt(mpz_class m) const {
     mpz_class ans;
     mpz_powm(ans.get_mpz_t(), m.get_mpz_t(), e.get_mpz_t(), n.get_mpz_t());
     return ans;
