@@ -1,7 +1,6 @@
 /*/------------------------------Secret Key Class-----------------------------------/*/
 
 #include "secret_key.h"
-#include "helper.h"
 
 SecretKey::SecretKey(mpz_class p, mpz_class q, mpz_class d) : p(p), q(q), d(d) {}
 

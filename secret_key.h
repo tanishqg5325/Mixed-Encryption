@@ -5,6 +5,7 @@
 
 #include <gmpxx.h>
 #include <string>
+#include "helper.h"
 
 using std::string;
 

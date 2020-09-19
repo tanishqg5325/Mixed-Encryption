@@ -1,7 +1,6 @@
 /*/------------------------------Public Key Class-----------------------------------/*/
 
 #include "public_key.h"
-#include "helper.h"
 
 PublicKey::PublicKey(mpz_class n, mpz_class e) : n(n), e(e) {}
 
