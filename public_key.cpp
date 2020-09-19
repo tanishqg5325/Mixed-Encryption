@@ -3,6 +3,12 @@
 #include "public_key.h"
 #include "helper.h"
 
+public_key::public_key(mpz_class n, mpz_class e) : n(n), e(e) {}
+
+mpz_class public_key::get_n() const {return n;}
+
+mpz_class public_key::get_e() const {return e;}
+
 string public_key::encrypt(string plain_text, int a) const {
     int block_size = get_block_size(n);
     if(a == 1) plain_text = pre_process(plain_text, block_size+a);
