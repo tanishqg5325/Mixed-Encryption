@@ -19,7 +19,7 @@ class CertificateAuthority {
     SecretKey sk;
 public:
     CertificateAuthority();
-    PublicKey get_public_key() const {return pk;};
+    PublicKey get_public_key() const;
     SecretKey register_user(User u);
     PublicKey get_public_key_of_user(int);
 };

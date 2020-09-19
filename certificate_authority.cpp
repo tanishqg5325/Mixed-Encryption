@@ -5,6 +5,8 @@
 extern gmp_randstate_t state;
 pair<PublicKey, SecretKey> generate_key(int);
 
+PublicKey CertificateAuthority::get_public_key() const {return pk;};
+
 CertificateAuthority::CertificateAuthority() {
     pair<PublicKey, SecretKey> key = generate_key(200);
     this->pk = key.first;
