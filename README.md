@@ -4,7 +4,7 @@
 
 A  public  key  infrastructure  (PKI)  is  an  arrangement  that binds public  keys  with  respective identities of entities (like people and organizations). The binding is established through a process of registration and issuance of certificates by a certificate authority (CA). The primary role of the CA is to digitally sign and publish the public key bound to a given user. This is done using the CA's own private key, so that trust in the user key relies on one's trust in the validity of the CA's key.
 
-Consider a mixed encryption scheme, which  combines asymmetric key  scheme with symmetric key scheme. We can define a mixed encryption scheme for transmitting a message m by user a A to a user B, as follows:
+Consider a mixed encryption scheme, which  combines asymmetric key  scheme with symmetric key scheme. We can define a mixed encryption scheme for transmitting a message m from user P to user Q, as follows:
 
 ### Definitions
 
@@ -16,7 +16,7 @@ Consider a mixed encryption scheme, which  combines asymmetric key  scheme with 
 - pk<sub>Q</sub> := public key for user Q
 - E<sub>S</sub> := Encryption algorithm for symmetric key scheme
 - D<sub>S</sub> := Decryption algorithm for symmetric key scheme
-E<sub>A</sub> := Encryption algorithm for asymmetric key scheme
+- E<sub>A</sub> := Encryption algorithm for asymmetric key scheme
 - D<sub>A</sub> := Decryption algorithm for asymmetric key scheme
 
 ### Encryption by User P
@@ -33,8 +33,34 @@ In this project, RSA has been used as asymmetric key scheme and Vigenere as symm
 
 ## Usage
 
+### Requirements
+
+- GNU Multiple Precision Arithmetic Library
+
+  ```bash
+  apt-get install libgmp-dev
+  ```
+
 ### Compile
 
 ```bash
 make
+```
+
+### Execute
+
+```bash
+./rsa < <file_containing_message>
+```
+
+### Example
+
+```bash
+./rsa < input.txt
+```
+
+### Clean
+
+```bash
+make clean
 ```
