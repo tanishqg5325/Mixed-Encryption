@@ -15,11 +15,10 @@ int main() {
     gmp_randseed_ui(state, time(0));
     CA = new CertificateAuthority();
     User a(123), b(251);
-    string vignereKey = "afeshadfkaklnljabjdsvhkjdfhsjgvbsduofvvlbdfsn";
+    string vignere_key = "afeshadfkaklnljabjdsvhkjdfhsjgvbsduofvvlbdfsn";
     string msg; cin >> msg;
-    string c = a.encrypt(msg, vignereKey, b.get_ID());
+    string c = a.encrypt(msg, vignere_key, b.get_ID());
+    cout << c << "\n\n";
     cout << b.decrypt(c, a.get_ID()) << "\n";
-    c = b.encrypt(msg, vignereKey, a.get_ID());
-    cout<< a.decrypt(c, b.get_ID()) << "\n";
     return 0;
 }
