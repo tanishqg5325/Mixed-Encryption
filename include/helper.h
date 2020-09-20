@@ -1,14 +1,17 @@
 /*/-------------------------------Helper Functions------------------------------------/*/
 
-#ifndef HELPER_H
-#define HELPER_H
+#ifndef HELPER_H_
+#define HELPER_H_
 
 #include <gmpxx.h>
 #include <string>
 
 using std::string;
 
-int get_block_size(mpz_class);
-string pre_process(string, int);
 
-#endif
+/// Returns maximum k such that 26^k < n
+int get_block_size (mpz_class n);
+
+string pre_process (string message, int block_size);
+
+#endif // HELPER_H_
